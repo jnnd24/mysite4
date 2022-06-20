@@ -11,6 +11,7 @@
 		]]>
 	</insert>
 	
+	<!-- 로그인 시 사용 -->
 	<select id="getUser" parameterType="com.javaex.vo.UserVo" resultType="com.javaex.vo.UserVo">
 		<![CDATA[
 			select no, name
@@ -19,5 +20,32 @@
 			and password = #{password}
 		]]>
 	</select>
+	
+	<!-- 회원정보 수정 시 사용 -->
+	<select id="getLoginUser" parameterType="int" resultType="com.javaex.vo.UserVo">
+		<![CDATA[
+			select no
+			        ,id
+			        ,password
+			        ,name
+			        ,gender
+			from users
+			where no = #{no}
+		]]>
+	</select>
+	
+	<!-- 회원정보 수정 -->
+	<update id="userUpdate" parameterType="com.javaex.vo.UserVo">
+		<![CDATA[
+			update users
+			set name = #{name}
+			    , password = #{password}
+			    , gender = #{gender}
+			where no = #{no}
+		]]>
+	</update>
+	
+	
+	
 
 </mapper>

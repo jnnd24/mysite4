@@ -2,7 +2,7 @@ package com.javaex.vo;
 
 public class UserVo {
 	
-	private String no;
+	private int no;
 	private String id;
 	private String password;
 	private String name;
@@ -14,15 +14,8 @@ public class UserVo {
 		super();
 	}
 	
-	public UserVo(String id, String password, String name, String gender) {
-		super();
-		this.id = id;
-		this.password = password;
-		this.name = name;
-		this.gender = gender;
-	}
 
-	public UserVo(String no, String id, String password, String name, String gender) {
+	public UserVo(int no, String id, String password, String name, String gender) {
 		super();
 		this.no = no;
 		this.id = id;
@@ -33,11 +26,11 @@ public class UserVo {
 	
 	
 	//gs
-	public String getNo() {
+	public int getNo() {
 		return no;
 	}
 
-	public void setNo(String no) {
+	public void setNo(int no) {
 		this.no = no;
 	}
 

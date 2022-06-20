@@ -31,12 +31,29 @@ public class UserService {
 	//로그인 정보불러오기
 	public UserVo getUser(UserVo userVo) {
 		System.out.println(" UserService > getUser");
-		
+
 		UserVo authUser = userDao.getUser(userVo);
 		
 		return authUser;
 	}
 	
+	
+	//정보불러오기 수정용
+	public UserVo getUser(int no) {
+		System.out.println(" UserService > getUser");
+		
+		UserVo userVo = userDao.getUser(no);
+		
+		return userVo;
+	}
+	
+	//회원정보 수정
+	public int update(UserVo userVo) {
+		
+		int count = userDao.update(userVo);
+		
+		return count;
+	}
 	
 	
 

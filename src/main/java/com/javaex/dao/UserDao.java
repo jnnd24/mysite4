@@ -32,11 +32,33 @@ public class UserDao {
 	//유저정보불러오기 로그인용
 	public UserVo getUser(UserVo userVo) {
 		System.out.println(" UserDao > getUser");
-		
+
 		UserVo authUser = sqlSession.selectOne("user.getUser", userVo);
 		
 		return authUser;
 	}
+	
+	//정보불러오기 수정용
+	public UserVo getUser(int no) {
+		System.out.println(" UserDao > getUser");
+		
+		System.out.println(no);
+		
+		UserVo userVo = sqlSession.selectOne("user.getLoginUser", no);
+		
+		return userVo;
+	}
+	
+	//회원정보 수정
+	public int update(UserVo userVo) {
+		System.out.println(" UserDao > update");
+		
+		System.out.println(userVo);
+		int count = sqlSession.update("user.userUpdate", userVo);
+		
+		return count;
+	}
+	
 	
 
 }
