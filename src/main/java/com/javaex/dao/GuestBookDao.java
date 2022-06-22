@@ -17,6 +17,11 @@ public class GuestBookDao {
 	private SqlSession sqlSession;
 
 
+	//생성자
+	
+	//메소드gs
+	
+	
 	//메소드 일반
 	//리스트 불러오기
 	public List<GuestBookVo> getGuestBookList(){

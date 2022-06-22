@@ -3,6 +3,7 @@
 
 <mapper namespace="user">
 	
+	
 	<!--  쿼리문 작성 -->
 	<insert id="insert" parameterType="com.javaex.vo.UserVo">
 		<![CDATA[

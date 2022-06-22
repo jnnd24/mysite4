@@ -17,7 +17,7 @@ public class BoardDao {
 	
 	//생성자
 	
-	//gs
+	//메소드gs
 	
 	//메소드
 	

@@ -5,7 +5,6 @@
 	
 	<resultMap id="resultMapGuestBookVo" type="com.javaex.vo.GuestBookVo">
 		<result column="reg_date" property="regDate"/>
-	
 	</resultMap>
 	
 	<!--  쿼리문 작성 -->

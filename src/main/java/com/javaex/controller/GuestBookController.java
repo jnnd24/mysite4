@@ -20,9 +20,8 @@ public class GuestBookController {
 	@Autowired
 	private GuestBookService guestbookService;
 	
+	
 	//메소드 일반
-	
-	
 	
 	//addList
 	@RequestMapping(value= "addList", method= {RequestMethod.GET, RequestMethod.POST})

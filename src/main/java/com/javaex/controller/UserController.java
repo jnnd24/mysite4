@@ -22,7 +22,7 @@ public class UserController {
 	
 	//생성자
 	
-	//메소드gs
+	//메소드 gs
 	
 	//메소드 일반
 	//회원가입 폼

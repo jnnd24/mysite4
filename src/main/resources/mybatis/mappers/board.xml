@@ -8,6 +8,7 @@
 		<result column="name" property="userName"/>
 	</resultMap>
 
+
 	<select id="getBoardList" resultMap="resultMapBoardVo">
 		<![CDATA[
 			select  b.no

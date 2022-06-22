@@ -15,7 +15,8 @@ public class GuestBookService {
 	@Autowired
 	private GuestBookDao guestbookDao;
 	
-	
+	//메소드
+	//리스트 가져오기
 	public List<GuestBookVo> getGuestBookList(){
 		
 		List<GuestBookVo> guestbookList = guestbookDao.getGuestBookList();

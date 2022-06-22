@@ -17,6 +17,7 @@ public class BoardService {
 	
 	//메소드
 	
+	
 	//리스트가져오기
 	public List<BoardVo> getBoardList() {
 		System.out.println(" boardServic > getBoardList");

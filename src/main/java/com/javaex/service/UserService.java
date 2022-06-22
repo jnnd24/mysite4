@@ -13,9 +13,6 @@ public class UserService {
 	@Autowired
 	private UserDao userDao;
 	
-	//생성자
-	
-	//gs
 	
 	//메소드
 	//회원가입
