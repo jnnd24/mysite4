@@ -29,6 +29,30 @@ public class BoardDao {
 		
 		return boardList;
 	}
+
+	
+	// 검색 리스트불러오기
+	public List<BoardVo> getBoardList2(String keyword) {
+		System.out.println(" BoardDao > getBoardList2");
+		
+		System.out.println(keyword);
+		List<BoardVo> boardList = sqlSession.selectList("board.getBoardList2", keyword);
+		System.out.println(boardList);
+		
+		return boardList;
+	}
+	
+	// 검색 리스트불러오기 합치기
+	public List<BoardVo> getBoardList3(String keyword) {
+		System.out.println(" BoardDao > getBoardList3");
+		
+		System.out.println(keyword);
+		List<BoardVo> boardList = sqlSession.selectList("board.getBoardList3", keyword);
+		System.out.println(boardList);
+		
+		return boardList;
+	}
+	
 	
 	
 	//조회수증가

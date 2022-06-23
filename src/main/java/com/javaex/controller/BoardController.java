@@ -23,6 +23,22 @@ public class BoardController {
 	private BoardService boardService;
 	
 	//메소드
+	
+	@RequestMapping(value= "list3", method= {RequestMethod.GET, RequestMethod.POST})
+	public String list3(Model model, 
+						@RequestParam(value="keyword", required = false, defaultValue = "")String keyword) {
+		System.out.println(" BoardCtrl > list");
+		
+		//리스트가져오기
+		List<BoardVo> boardList = boardService.getBoardList2(keyword);
+		
+		model.addAttribute("boardList", boardList);
+		System.out.println(boardList);
+		
+		return "board/list";
+	}
+	
+	
 	@RequestMapping(value= "list", method= {RequestMethod.GET, RequestMethod.POST})
 	public String list(Model model) {
 		System.out.println(" BoardCtrl > list");
@@ -32,6 +48,19 @@ public class BoardController {
 		
 		model.addAttribute("boardList", boardList);
 		System.out.println(boardList);
+		
+		return "board/list";
+	}
+	
+	//검색
+	
+	@RequestMapping(value= "search", method= {RequestMethod.GET, RequestMethod.POST})
+	public String search(Model model, @RequestParam("keyword")String keyword) {
+		System.out.println(" BoardCtrl > search");
+
+		//리스트가져오기
+		List<BoardVo> boardList = boardService.getBoardList2(keyword);
+		model.addAttribute("boardList", boardList);
 		
 		return "board/list";
 	}

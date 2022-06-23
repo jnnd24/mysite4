@@ -27,6 +27,24 @@ public class BoardService {
 		return boardList;
 	}
 	
+	//검색 리스트가져오기
+	public List<BoardVo> getBoardList2(String keyword) {
+		System.out.println(" boardServic > getBoardList2");
+		
+		List<BoardVo> boardList = boardDao.getBoardList2(keyword);
+		
+		return boardList;
+	}
+	
+	//검색 리스트가져오기 합치기
+	public List<BoardVo> getBoardList3(String keyword) {
+		System.out.println(" boardServic > getBoardList2");
+		
+		List<BoardVo> boardList = boardDao.getBoardList3(keyword);
+		
+		return boardList;
+	}
+	
 	//조회수 올리기
 	public int hitup(int no) {
 		System.out.println(" boardService > hitup");
