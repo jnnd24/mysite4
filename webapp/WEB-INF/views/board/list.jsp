@@ -6,8 +6,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link href="/mysite4/assets/css/mysite.css" rel="stylesheet" type="text/css">
-<link href="/mysite4/assets/css/board.css" rel="stylesheet" type="text/css">
+<link href="${pageContext.request.contextPath }/assets/css/mysite.css" rel="stylesheet" type="text/css">
+<link href="${pageContext.request.contextPath }/assets/css/board.css" rel="stylesheet" type="text/css">
 
 </head>
 
@@ -101,8 +101,10 @@
 							
 							<div class="clear"></div>
 						</div>
-						<a id="btn_write" href="${pageContext.request.contextPath}">글쓰기</a>
-					
+						<!-- 로그인 했을 때 만 노출 -->
+						<c:if test="${authUser != null }"> 
+							<a id="btn_write" href="${pageContext.request.contextPath}/board/writeForm">글쓰기</a>
+						</c:if>
 					</div>
 					<!-- //list -->
 				</div>

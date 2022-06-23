@@ -104,6 +104,25 @@ public class BoardController {
 	}
 	
 	
+	//작성 폼
+	@RequestMapping(value="writeForm", method= {RequestMethod.GET, RequestMethod.POST})
+	public String writeForm() {
+		System.out.println(" BoardCtrl > writeForm");
+		
+		return "board/writeForm";
+	}
+	
+	
+	//작성
+	@RequestMapping(value="write", method= {RequestMethod.GET, RequestMethod.POST})
+	public String write(@ModelAttribute BoardVo boardVo) {
+		System.out.println(" BoardCtrl > write");
+		
+		boardService.write(boardVo);
+		
+		return "";
+	}
+	
 	
 	
 

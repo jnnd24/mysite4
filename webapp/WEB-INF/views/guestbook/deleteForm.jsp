@@ -8,8 +8,8 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 
-<link href="/mysite4/assets/css/mysite.css" rel="stylesheet" type="text/css">
-<link href="/mysite4/assets/css/guestbook.css" rel="stylesheet" type="text/css">
+<link href="${pageContext.request.contextPath }/assets/css/mysite.css" rel="stylesheet" type="text/css">
+<link href="${pageContext.request.contextPath }/assets/css/guestbook.css" rel="stylesheet" type="text/css">
 
 </head>
 
@@ -61,7 +61,7 @@
 								<td>비밀번호</td>
 								<td><input type="password" name="password"></td>
 								<td class="text-left"><button type="submit">삭제</button></td>
-								<td><a href="main">[메인으로 돌아가기]</a></td>
+								<td><a href="${pageContext.request.contextPath }/main">[메인으로 돌아가기]</a></td>
 							</tr>
 						</table>
 						<input type='hidden' name="" value="">

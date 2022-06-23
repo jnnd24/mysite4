@@ -6,8 +6,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link href="./assets/css/mysite.css" rel="stylesheet" type="text/css">
-<link href="./assets/css/main.css" rel="stylesheet" type="text/css">
+<link href="${pageContext.request.contextPath }/assets/css/mysite.css" rel="stylesheet" type="text/css">
+<link href="${pageContext.request.contextPath }/assets/css/main.css" rel="stylesheet" type="text/css">
 
 </head>
 
@@ -28,7 +28,7 @@
 				<!-- content-head 없음 -->
 				<div id="index"> 
 				
-					<img id="profile-img" src="./assets/image/profile.jpg">
+					<img id="profile-img" src="${pageContext.request.contextPath }/assets/image/profile.jpg">
 					
 					<div id="greetings">
 						<p class="text-xlarge">

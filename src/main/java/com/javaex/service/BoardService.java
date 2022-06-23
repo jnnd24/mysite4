@@ -70,5 +70,14 @@ public class BoardService {
 		return count;
 	}
 	
+	//게시물 등록
+	public int write(BoardVo boardVo) {
+		System.out.println(" BoardService > write");
+		
+		int count = boardDao.write(boardVo);
+		
+		return count;
+	}
+	
 
 }

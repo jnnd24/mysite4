@@ -83,5 +83,14 @@ public class BoardDao {
 	}
 	
 	
+	//게시물 등록
+	public int write(BoardVo boardVo) {
+		System.out.println(" BoardDao > write");
+		
+		int count = sqlSession.insert("board.write", boardVo);
+		
+		return count;
+	}
+	
 
 }

@@ -95,6 +95,20 @@
 			where no = #{no}
 		]]>
 	</update>
+	
+	<!-- 게시물 등록 -->
+	<insert id="write" parameterType="com.javaex.vo.BoardVo">
+		<![CDATA[
+			insert into board
+			values (seq_board_no.nextval,
+			    #{title},
+			    #{content},
+			    0,
+			    sysdate,
+			    #{userNo}
+			)
+		]]>
+	</insert>
 
 
 </mapper>

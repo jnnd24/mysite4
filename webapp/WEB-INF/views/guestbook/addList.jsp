@@ -8,8 +8,8 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 
-<link href="/mysite4/assets/css/mysite.css" rel="stylesheet" type="text/css">
-<link href="/mysite4/assets/css/guestbook.css" rel="stylesheet" type="text/css">
+<link href="${pageContext.request.contextPath }/assets/css/mysite.css" rel="stylesheet" type="text/css">
+<link href="${pageContext.request.contextPath }/assets/css/guestbook.css" rel="stylesheet" type="text/css">
 
 </head>
 
@@ -88,7 +88,7 @@
 							<td>${gbList.no }</td>
 							<td>${gbList.name }</td>
 							<td>${gbList.regDate }</td>
-							<td><a href="./deleteForm?no=${gbList.no }">[삭제]</a></td>
+							<td><a href="${pageContext.request.contextPath }/board/deleteForm?no=${gbList.no }">[삭제]</a></td>
 						</tr>
 						<tr>
 							<td colspan=4 class="text-left">방명록 글입니다. 방명록 글입니다.</td>
