@@ -94,11 +94,12 @@
 					<h4 class="modal-title">이미지등록</h4>
 				</div>
 				
-				<form method="get" action="upload" enctype="multipart/form-data">
+				<form method="post" action="upload" enctype="multipart/form-data">
+					<input type="text" name=userNo value="${authUser.no }">
 					<div class="modal-body">
 						<div class="form-group">
 							<label class="form-text">글작성</label>
-							<input id="addModalContent" type="text" name="" value="" >
+							<input id="addModalContent" type="text" name="content" value="" >
 						</div>
 						<div class="form-group">
 							<label class="form-text">이미지선택</label>

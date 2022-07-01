@@ -1,7 +1,9 @@
 package com.javaex.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -9,6 +11,8 @@ import org.springframework.web.multipart.MultipartFile;
 @RequestMapping("gallery")
 public class GalleryController {
 
+	@Autowired
+	private GalleryService galleryService;
 	
 	
 	@RequestMapping(value="list")
@@ -21,11 +25,13 @@ public class GalleryController {
 	};
 	
 	
-	@RequestMapping("upload")
-	public String upload(@RequestParam("file") MultipartFile file) {
+	@RequestMapping(value="upload", method= {RequestMethod.GET, RequestMethod.POST})
+	public String upload(@RequestParam("file") MultipartFile file, 
+						@RequestParam("userNo")int userNo, 
+						@RequestParam("content")String content) {
 		System.out.println(" GalleryCtrl > upload");
 		
-		
+		galleryService.upload(file, userNo, content);
 		
 		
 		return "";
