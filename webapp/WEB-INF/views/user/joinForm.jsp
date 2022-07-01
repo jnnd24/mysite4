@@ -6,8 +6,13 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
+<!-- css -->
 <link href="${pageContext.request.contextPath }/assets/css/mysite.css" rel="stylesheet" type="text/css">
 <link href="${pageContext.request.contextPath }/assets/css/user.css" rel="stylesheet" type="text/css">
+
+<!-- js -->
+<script type="text/javascript" src="${pageContext.request.contextPath }/assets/js/jquery/jquery-1.12.4.js"></script>
 
 </head>
 
@@ -48,7 +53,7 @@
 	
 				<div id="user">
 					<div id="joinForm">
-						<form action="join" method="get">
+						<form id="join-form" action="join" method="get">
 	
 							<!-- 아이디 -->
 							<div class="form-group">
@@ -111,5 +116,44 @@
 	<!-- //wrap -->
 
 </body>
+<script type="text/javascript">
+	
+	$("#join-form").on("submit", function(){
+		console.log("회원가입버튼");
+		
+
+		var id = $("#input-uid").val();
+		var password = $("#input-pass").val();
+		
+		//ID가 비어있을 떄
+		if(id == null || id == ""){
+			alert("아이디를 입력해주세요");
+			return false;
+		}
+		
+		//비번이 비어있을 때
+		if(password.length < 8){
+			alert("패스워드를 입력해주세요");
+			return false;
+		}
+		
+		
+		//약관동의
+		var agree = $("#chk-agree").is("checked");
+		
+		if(agree == false){
+			alert("서비스 이용 약관을 확인해주세요");
+			return false;
+		}
+		
+		
+		
+		return true;
+		
+		
+	});
+	
+
+</script>
 
 </html>

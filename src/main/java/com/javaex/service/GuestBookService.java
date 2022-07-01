@@ -35,11 +35,19 @@ public class GuestBookService {
 	
 	
 	//삭제
-	public int delete(GuestBookVo guestbookVo) {
+	public String delete(GuestBookVo guestbookVo) {
 		
 		int count = guestbookDao.delete(guestbookVo);
 		
-		return count;
+		String state;
+		
+		if (count>0) {
+			state = "success";
+		}else {
+			state = "fail";
+		}
+		
+		return state;
 	}
 	
 

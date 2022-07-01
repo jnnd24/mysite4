@@ -45,6 +45,7 @@ public class GuestBookDao {
 	
 	//방명록 삭제
 	public int delete(GuestBookVo guestbookVo) {
+		System.out.println(" GBDao > delete");
 		
 		int count = sqlSession.delete("guestbook.delete", guestbookVo);
 		
