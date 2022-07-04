@@ -22,13 +22,7 @@
 		<!-- //nav -->
 
 		<div id="container" class="clearfix">
-			<div id="aside">
-				<h2>게시판</h2>
-				<ul>
-					<li><a href="">일반게시판</a></li>
-					<li><a href="">댓글게시판</a></li>
-				</ul>
-			</div>
+			<c:import url="/WEB-INF/views/includes/boardAside.jsp"></c:import>
 			<!-- //aside -->
 
 			<div id="content">
@@ -80,7 +74,10 @@
 								</span>
 							</div>
 							
-							<a id="btn_modify" href="./modifyForm?no=${getBoard.no }">수정</a>
+							<!-- 자신의 글만 수정 가능 -->
+							<c:if test="${getBoard.userNo == authUser.no}">
+								<a id="btn_modify" href="./modifyForm?no=${getBoard.no }">수정</a>
+							</c:if>
 							<a id="btn_modify" href="./list">목록</a>
 							
 						</form>

@@ -24,9 +24,11 @@
 			        u.name
 			from rboard r, users u
 			where r.user_no = u.no
-			order by reg_date desc
+			order by group_no desc,  order_no asc
+			
 		]]>
 	</select>
+	<!-- order by reg_date desc -->
 	
 	
 	<!-- 게시물 등록 -->
