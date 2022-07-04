@@ -62,21 +62,28 @@
 									<th>글쓴이</th>
 									<th>조회수</th>
 									<th>작성일</th>
+									<th>group_no</th>
+									<th>order_no</th>
+									<th>depth</th>
 									<th>관리</th>
 								</tr>
 							</thead>
-							<c:forEach items="${boardList }" var="bList">
+							<c:forEach items="${rboardList }" var="bList">
 								<tbody>
 									<tr>
-										<td>123</td>
+										<td>${bList.no }</td>
 										<td class="text-left"><a href="./read?no=${bList.no }">${bList.title }</a></td>
-										<td>${bList.userName }</td>
+										<td>${bList.name }</td>
 										<td>${bList.hit }</td>
 										<td>${bList.regDate }</td>
+										<td>${bList.groupNo }</td>
+										<td>${bList.orderNo }</td>
+										<td>${bList.depth }</td>
 										<!-- 자신의 글에만 노출 -->
 										<c:if test="${authUser.no == bList.userNo }">
 											<td><a href="">[삭제]</a></td>
 										</c:if>
+										
 									</tr>
 								</tbody>
 							</c:forEach>
@@ -102,9 +109,9 @@
 							<div class="clear"></div>
 						</div>
 						<!-- 로그인 했을 때 만 노출 -->
-						<c:if test="${authUser != null }"> 
-							<a id="btn_write" href="${pageContext.request.contextPath}/board/writeForm">글쓰기</a>
-						</c:if>
+						<%-- <c:if test="${authUser != null }">  --%>
+							<a id="btn_write" href="${pageContext.request.contextPath}/rboard/writeForm">글쓰기</a>
+						<%-- </c:if> --%>
 					</div>
 					<!-- //list -->
 				</div>

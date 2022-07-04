@@ -5,18 +5,20 @@
 	
 	<!-- 쿼리문 작성 -->
 	
-	<insert id="insert" parameterType="com.javaex.vo.FileVo">
+	
+	<insert id="upload" parameterType="com.javaex.vo.GalleryVo">
 		<![CDATA[
 			insert into gallery
-			value (seq_gallery_no.nextval,
-			        user_no,
-			        content내용,
-			        filePath,
-			        orgName,
-			        saveName,
-			        fileSize
+			values (seq_gallery_no.nextval,
+			        #{userNo},
+			        #{content},
+			        #{filePath},
+			        #{orgName},
+			        #{saveName},
+			        #{fileSize}
 			)
 		]]>
 	</insert>
+	
 
 </mapper>

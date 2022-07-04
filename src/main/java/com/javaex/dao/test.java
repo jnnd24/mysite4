@@ -3,12 +3,14 @@ package com.javaex.dao;
 public class test {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-		BoardDao boardDao = new BoardDao();
 		
-		System.out.println(boardDao.getBoardList().toString());
+		
+		
+		RboardDao tDao = new RboardDao(); 
+		
+		//List<RboardVo> getList = tDao.getRboardList(); 
+		//System.out.println(getList);
+		
 		
 	}
-
 }
