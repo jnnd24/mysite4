@@ -120,7 +120,7 @@ public class BoardController {
 		
 		boardService.write(boardVo);
 		
-		return "";
+		return "redirect:list";
 	}
 	
 	

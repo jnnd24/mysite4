@@ -1,4 +1,4 @@
-package com.javaex.api.controller;
+package com.javaex.controller;
 
 import java.util.List;
 
@@ -85,6 +85,32 @@ public class RboardController {
 		System.out.println(rboardVo);
 		
 		rboardService.reply(rboardVo);
+		
+		return "redirect/list";
+	}
+	
+	//수정 폼
+	@RequestMapping(value="modifyForm")
+	public String modifyForm(Model model, @RequestParam("no")int no) {
+		System.out.println(" RboardCtrl > modifyForm");
+		
+		//no로 게시물 불러오기
+		RboardVo getRboard = rboardService.read(no);
+		
+		//게시물내용 attribute로 넘기기
+		model.addAttribute("getRboard", getRboard);
+			
+		return "rboard/modifyForm";
+	}
+	
+	//수정
+	@RequestMapping(value="modify")
+	public String modify(RboardVo rboardVo) {
+		System.out.println(" RboardCtrl > modify");
+		
+		System.out.println(rboardVo);
+		
+		//rboardService.update(rboardVo);
 		
 		return "";
 	}
