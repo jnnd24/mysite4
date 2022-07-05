@@ -9,6 +9,53 @@
 	</resultMap>
 
 
+	<!-- 페이징용 -->
+	<select id="getBoardList4" parameterType="map" resultMap="resultMapBoardVo">
+		<![CDATA[
+			select ort.rn,
+			        ort.no,
+			        ort.title,
+			        ort.content,
+			        ort.hit,
+			        ort.regdate,
+			        ort.user_no,
+			        ort.name
+			from (
+			        select rownum rn,
+			        ot.no,
+			        ot.title,
+			        ot.content,
+			        ot.hit,
+			        ot.regdate,
+			        ot.user_no,
+			        ot.name
+			from (
+			        select  b.no
+			                ,b.title
+			                ,b.content
+			                ,b.hit
+			                ,to_char(b.reg_date, 'YY-MM-DD HH24:MI') regdate
+			                ,b.user_no
+			                ,u.name
+			        from board b, users u
+			        where b.user_no = u.no
+			        order by no desc) ot
+			) ort
+			where rn >=#{startRnum} 
+			and rn <=#{endRnum}
+		]]>
+	</select>
+	
+	<!-- 전체글 갯수구하기 -->
+	<select id="selectTotalCnt" resultType="int">
+		<![CDATA[
+			select count(*) count
+			from board b, users u
+			where b.user_no = u.no
+		]]>
+	</select>
+	
+	
 	<select id="getBoardList" resultMap="resultMapBoardVo">
 		<![CDATA[
 			select  b.no

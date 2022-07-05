@@ -17,12 +17,25 @@ import com.javaex.vo.BoardVo;
 @RequestMapping("/board")
 public class BoardController {
 	
-	
 	//필드 
 	@Autowired
 	private BoardService boardService;
 	
 	//메소드
+	
+	//리스트(일반) - 페이징
+	@RequestMapping(value="list4")
+	public String list4(Model model, 
+						@RequestParam(value="crtPage", required=false, defaultValue="1")int crtPage) {
+		System.out.println(" BoardCtrl > list4");
+		
+		List<BoardVo> boardList = boardService.getBoardList4(crtPage);
+		
+		model.addAttribute("boardList", boardList);
+		
+		return "board/list4";
+	}
+	
 	
 	@RequestMapping(value= "list3", method= {RequestMethod.GET, RequestMethod.POST})
 	public String list3(Model model, 
